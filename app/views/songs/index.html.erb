@@ -1,0 +1,30 @@
+<h1 style="color: white;">Listing songs</h1>
+
+<table width="260" border="0" align="left" cellpadding="6" cellsapcing="1">
+  <tr style="background: #666;">
+    <th>Title</th>
+    <th>Lyrics</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @songs.each do |song| %>
+  <tr>
+    <td><%= song.title %></td>
+    <td><%= song.lyrics %></td>
+    <td><%= song.rating %></td>
+    <td><%= link_to 'Show', song %></td>
+    <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div>
+  <%= link_to 'New Song', new_song_path %>
+</div>
+
