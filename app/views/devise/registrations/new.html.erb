@@ -1,0 +1,25 @@
+<h2 style="font-family: Cambria, "Times New Roman", Georgia, Times, serif; font-size: 14px ">Sign up</h2>
+<div id="wrap">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %>
+  <span class="form_hint">enter a valid email address</span>
+</div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+<span class="form_hint">password should be at least 8 characters long</span>
+</div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+<span class="form_hint">confirmation should match the password above</span>
+</div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

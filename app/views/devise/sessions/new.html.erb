@@ -1,0 +1,22 @@
+<h2 style="font-size: 16px;">Sign in</h2>
+<div id="wrap">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %>
+<span class="form_hint">enter a valid email address</span>
+</div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+<span class="form_hint">password should be at least 8 characters long</span>
+</div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div id="lab"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div
